@@ -509,7 +509,7 @@ index 7171bdf7fb0489e9678588dfa33410984015ea3f..2484293b12d9ec88b8a2570aa853a12f
          private volatile long c;
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index c6c7d6c1871d5bee66e46853ae3a171be112254e..f24ad56bc13f70544ca8801f8def715d7a3892a3 100644
+index 6aae51ed090c80ae05ea1a4690ca85e2d9b57a65..11944c3ec4f71597e8179848684dda3212f7574f 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -226,6 +226,9 @@ import org.yaml.snakeyaml.error.MarkedYAMLException;
@@ -522,7 +522,7 @@ index c6c7d6c1871d5bee66e46853ae3a171be112254e..f24ad56bc13f70544ca8801f8def715d
  public final class CraftServer implements Server {
      private final String serverName = "Paper"; // Paper
      private final String serverVersion;
-@@ -2301,5 +2304,24 @@ public final class CraftServer implements Server {
+@@ -2306,5 +2309,24 @@ public final class CraftServer implements Server {
      public boolean suggestPlayerNamesWhenNullTabCompletions() {
          return com.destroystokyo.paper.PaperConfig.suggestPlayersWhenNullTabCompletions;
      }

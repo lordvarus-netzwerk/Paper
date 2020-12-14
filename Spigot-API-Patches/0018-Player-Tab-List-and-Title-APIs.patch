@@ -7,10 +7,10 @@ Co-authored-by: Fruxz <cedricspitzer@outlook.de>
 
 diff --git a/src/main/java/com/destroystokyo/paper/Title.java b/src/main/java/com/destroystokyo/paper/Title.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..5105dfcee646718cd8abc79d1d8062a580b4e923
+index 0000000000000000000000000000000000000000..9e90c3df567a65b48a0b9341f784eb902cb35d8c
 --- /dev/null
 +++ b/src/main/java/com/destroystokyo/paper/Title.java
-@@ -0,0 +1,417 @@
+@@ -0,0 +1,420 @@
 +package com.destroystokyo.paper;
 +
 +import net.md_5.bungee.api.chat.BaseComponent;
@@ -561,5 +561,5 @@ index 53cff0ed23ac7ebdc9567aafcde856b6dc5c6d9d..9604283c140be0f7cebcc49b972a3b25
 +    @Deprecated
 +    public void hideTitle();
      // Paper end
-
+ 
      /**

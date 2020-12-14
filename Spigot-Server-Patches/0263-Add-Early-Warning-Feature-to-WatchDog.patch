@@ -48,10 +48,10 @@ index 983868ef2b2d9bbec19ba8a23cb6376de015b53e..aea9e169f9a11378c176c0cc3ee5a0d5
                  long start = System.nanoTime(), curTime, tickSection = start; // Paper - Further improve server tick loop
                  lastTick = start - TICK_TIME; // Paper
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 7f0a343d3f59131bbf37290c95733774949533d7..64432128bbb8b22e52fcd81a860cc373e33bea53 100644
+index 2768389939638a904a1cbc65ee771b60e6a6fbca..3cfadf8f22a3cdf31a7bf937f2c1207208366827 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -807,6 +807,7 @@ public final class CraftServer implements Server {
+@@ -812,6 +812,7 @@ public final class CraftServer implements Server {
  
      @Override
      public void reload() {
@@ -59,7 +59,7 @@ index 7f0a343d3f59131bbf37290c95733774949533d7..64432128bbb8b22e52fcd81a860cc373
          reloadCount++;
          configuration = YamlConfiguration.loadConfiguration(getConfigFile());
          commandsConfiguration = YamlConfiguration.loadConfiguration(getCommandsConfigFile());
-@@ -925,6 +926,7 @@ public final class CraftServer implements Server {
+@@ -930,6 +931,7 @@ public final class CraftServer implements Server {
          enablePlugins(PluginLoadOrder.STARTUP);
          enablePlugins(PluginLoadOrder.POSTWORLD);
          getPluginManager().callEvent(new ServerLoadEvent(ServerLoadEvent.LoadType.RELOAD));

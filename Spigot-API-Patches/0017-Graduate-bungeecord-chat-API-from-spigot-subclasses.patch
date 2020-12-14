@@ -6,10 +6,10 @@ Subject: [PATCH] Graduate bungeecord chat API from spigot subclasses
 Change Javadoc to be accurate
 
 diff --git a/src/main/java/org/bukkit/Bukkit.java b/src/main/java/org/bukkit/Bukkit.java
-index 9b0988bed1cefc4826e81c956132532e64eed1cf..bcd80fd0f17f396dc43bac3b1d06f76f8baaa559 100644
+index 10274053320f1ec690a65d3794abb44b58658059..22b83b142de97dcba28fa9a49730de7880d0b5d2 100644
 --- a/src/main/java/org/bukkit/Bukkit.java
 +++ b/src/main/java/org/bukkit/Bukkit.java
-@@ -276,6 +276,30 @@ public final class Bukkit {
+@@ -285,6 +285,30 @@ public final class Bukkit {
          return server.broadcastMessage(message);
      }
  
@@ -41,10 +41,10 @@ index 9b0988bed1cefc4826e81c956132532e64eed1cf..bcd80fd0f17f396dc43bac3b1d06f76f
       * Gets the name of the update folder. The update folder is used to safely
       * update plugins at the right moment on a plugin load.
 diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
-index 5095bc894b9a4b03ed90a848a7d0c2bcc8d85bbf..cf5bb36f43a583ee03daa95fe2fcba204198fb22 100644
+index 7e4a728ceb943b6a32b9ba9b84bada34e71c0980..9ce9b4ce2da6c57c62607502ae2042e30fc26d88 100644
 --- a/src/main/java/org/bukkit/Server.java
 +++ b/src/main/java/org/bukkit/Server.java
-@@ -227,6 +227,30 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
+@@ -234,6 +234,30 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      @Deprecated // Paper
      public int broadcastMessage(@NotNull String message);
  

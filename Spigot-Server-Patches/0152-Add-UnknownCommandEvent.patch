@@ -5,10 +5,10 @@ Subject: [PATCH] Add UnknownCommandEvent
 
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index a56db30d63b581b4fa6f46ca21a4dfe783baf5ec..c6c7d6c1871d5bee66e46853ae3a171be112254e 100644
+index c8b5d0933f26882be18505d9366a5c3d546ba2dc..6aae51ed090c80ae05ea1a4690ca85e2d9b57a65 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -789,7 +789,13 @@ public final class CraftServer implements Server {
+@@ -794,7 +794,13 @@ public final class CraftServer implements Server {
  
          // Spigot start
          if (!org.spigotmc.SpigotConfig.unknownCommandMessage.isEmpty()) {

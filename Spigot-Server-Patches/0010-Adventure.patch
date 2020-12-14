@@ -1108,7 +1108,7 @@ index e6d97e7ffae3eadac586bad078123cd4aaa69916..d11725d61b888ceb08c4ea30f23d5631
              }
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7d0f5206d 100644
+index 73bd46c980cb13d6cbe4aba41adb122eaab769be..7a79d80a85baca7fbebdbcaa0dd89197c5d41da3 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -564,8 +564,11 @@ public final class CraftServer implements Server {
@@ -1124,7 +1124,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
      }
  
      public Player getPlayer(final EntityPlayer entity) {
-@@ -1298,7 +1301,15 @@ public final class CraftServer implements Server {
+@@ -1303,7 +1306,15 @@ public final class CraftServer implements Server {
          return configuration.getInt("settings.spawn-radius", -1);
      }
  
@@ -1140,7 +1140,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
      public String getShutdownMessage() {
          return configuration.getString("settings.shutdown-message");
      }
-@@ -1414,7 +1425,15 @@ public final class CraftServer implements Server {
+@@ -1419,7 +1430,15 @@ public final class CraftServer implements Server {
      }
  
      @Override
@@ -1156,7 +1156,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
          Set<CommandSender> recipients = new HashSet<>();
          for (Permissible permissible : getPluginManager().getPermissionSubscriptions(permission)) {
              if (permissible instanceof CommandSender && permissible.hasPermission(permission)) {
-@@ -1422,14 +1441,14 @@ public final class CraftServer implements Server {
+@@ -1427,14 +1446,14 @@ public final class CraftServer implements Server {
              }
          }
  
@@ -1173,7 +1173,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
  
          for (CommandSender recipient : recipients) {
              recipient.sendMessage(message);
-@@ -1655,6 +1674,14 @@ public final class CraftServer implements Server {
+@@ -1660,6 +1679,14 @@ public final class CraftServer implements Server {
          return CraftInventoryCreator.INSTANCE.createInventory(owner, type);
      }
  
@@ -1188,7 +1188,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
      @Override
      public Inventory createInventory(InventoryHolder owner, InventoryType type, String title) {
          Validate.isTrue(type.isCreatable(), "Cannot open an inventory of type ", type);
-@@ -1667,13 +1694,28 @@ public final class CraftServer implements Server {
+@@ -1672,13 +1699,28 @@ public final class CraftServer implements Server {
          return CraftInventoryCreator.INSTANCE.createInventory(owner, size);
      }
  
@@ -1217,7 +1217,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
      public Merchant createMerchant(String title) {
          return new CraftMerchantCustom(title == null ? InventoryType.MERCHANT.getDefaultTitle() : title);
      }
-@@ -1717,6 +1759,12 @@ public final class CraftServer implements Server {
+@@ -1722,6 +1764,12 @@ public final class CraftServer implements Server {
          return Thread.currentThread().equals(console.serverThread) || console.hasStopped() || !org.spigotmc.AsyncCatcher.enabled; // All bets are off if we have shut down (e.g. due to watchdog)
      }
  
@@ -1230,7 +1230,7 @@ index 90551257c299aaf694eb4f4063d5b1b3eee94876..53f0722477cf2aef43ac073d2977b6d7
      @Override
      public String getMotd() {
          return console.getMotd();
-@@ -2143,5 +2191,15 @@ public final class CraftServer implements Server {
+@@ -2148,5 +2196,15 @@ public final class CraftServer implements Server {
              return null;
          }
      }

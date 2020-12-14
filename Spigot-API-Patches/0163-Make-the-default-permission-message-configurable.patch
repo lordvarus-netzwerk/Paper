@@ -5,10 +5,10 @@ Subject: [PATCH] Make the default permission message configurable
 
 
 diff --git a/src/main/java/org/bukkit/Bukkit.java b/src/main/java/org/bukkit/Bukkit.java
-index 0d29a37e45afba5590eb83e235439a95c55d7af1..999eec773eb75e38c02cbf59e2481b68f3d81862 100644
+index 2d7f8e128e23934a8fe26baf19198b7ffc8447bb..908b75f0b9897ce830ed7c0a2c1dd0a458a872f1 100644
 --- a/src/main/java/org/bukkit/Bukkit.java
 +++ b/src/main/java/org/bukkit/Bukkit.java
-@@ -1772,6 +1772,15 @@ public final class Bukkit {
+@@ -1781,6 +1781,15 @@ public final class Bukkit {
          return server.suggestPlayerNamesWhenNullTabCompletions();
      }
  
@@ -25,10 +25,10 @@ index 0d29a37e45afba5590eb83e235439a95c55d7af1..999eec773eb75e38c02cbf59e2481b68
       * Creates a PlayerProfile for the specified uuid, with name as null
       * @param uuid UUID to create profile for
 diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
-index 510c3ebda44431a813f22cb1985f1bc3c3f7271a..f7f4ab91f3f31a85decd3988aa77288fc0e76382 100644
+index 01657abaff86cf7bb3ffb857024c5032781b8660..a68b973e7574cae3ee7be7cfc51786589280408a 100644
 --- a/src/main/java/org/bukkit/Server.java
 +++ b/src/main/java/org/bukkit/Server.java
-@@ -1557,6 +1557,13 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
+@@ -1564,6 +1564,13 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
       */
      boolean suggestPlayerNamesWhenNullTabCompletions();
  
