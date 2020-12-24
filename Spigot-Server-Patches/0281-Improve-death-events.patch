@@ -325,10 +325,10 @@ index 4de26d503c6281c15a59bbc61f5334041457a0a6..d6311d39cd4c79e8acf79975613f385e
          }
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 01e64cad1908dfc1565d9f6b8456daa9b04f46ea..60e99d6208e594058fc4fbfdf7cd95380e62221f 100644
+index 2cc975c0ef464cc8ef5091d9a99c319a447c2781..38ca01cd019a38def0feb5c2d9b558908ce7533f 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1853,7 +1853,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -1854,7 +1854,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      }
  
      public void sendHealthUpdate() {
@@ -346,7 +346,7 @@ index 01e64cad1908dfc1565d9f6b8456daa9b04f46ea..60e99d6208e594058fc4fbfdf7cd9538
  
      public void injectScaledMaxHealth(Collection<AttributeModifiable> collection, boolean force) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 69512dc5771fa8789bd226abd0fa891a09a9fbcb..8f0405ad9b35f529e5f5964d7a49521ecd4f9262 100644
+index 779604efd1c0fdff04c5ca121ecc143029f30df2..08f968dbb338da5454aeec66201580ee5b8393d9 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -791,9 +791,16 @@ public class CraftEventFactory {

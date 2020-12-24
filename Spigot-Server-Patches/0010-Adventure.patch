@@ -1438,7 +1438,7 @@ index 34ceee4a81ef4ed05eb9007ca17c223f75f4ff50..11acf5f725a7f2e350a05268a00906ba
      public net.minecraft.server.Enchantment getHandle() {
          return target;
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-index c20f161eb42159edcfe2c47e3749d88fba9b4747..1e2979220a0e94d63f8622a23f38327aedb7fc91 100644
+index db7c4011c8b90b6daca2b48a6d9ec447d31f7197..969bf1095bb2a90ad0f1cb1f1e023e056e3855c0 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
 @@ -145,6 +145,7 @@ import net.minecraft.server.EntityZombieVillager;
@@ -1449,7 +1449,7 @@ index c20f161eb42159edcfe2c47e3749d88fba9b4747..1e2979220a0e94d63f8622a23f38327a
  import org.bukkit.Chunk; // Paper
  import org.bukkit.EntityEffect;
  import org.bukkit.Location;
-@@ -763,6 +764,19 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
+@@ -768,6 +769,19 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
          return getHandle().getVehicle().getBukkitEntity();
      }
  

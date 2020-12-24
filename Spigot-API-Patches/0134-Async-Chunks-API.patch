@@ -8,10 +8,10 @@ Adds API's to load or generate chunks asynchronously.
 Also adds utility methods to Entity to teleport asynchronously.
 
 diff --git a/src/main/java/org/bukkit/World.java b/src/main/java/org/bukkit/World.java
-index a09cbfa277c82522be406ef079aa32d921c67799..d7367f6819fa0feb535293da301da862f0dd850e 100644
+index 2487a95fbca15778d0cbaedd4edaa45afcc901fd..eb75516b6f533661d8dc38344570c5dda2485e8c 100644
 --- a/src/main/java/org/bukkit/World.java
 +++ b/src/main/java/org/bukkit/World.java
-@@ -221,6 +221,482 @@ public interface World extends PluginMessageRecipient, Metadatable {
+@@ -221,6 +221,482 @@ public interface World extends PluginMessageRecipient, Metadatable, net.kyori.ad
      public default Chunk getChunkAt(long chunkKey) {
          return getChunkAt((int) chunkKey, (int) (chunkKey >> 32));
      }
@@ -495,7 +495,7 @@ index a09cbfa277c82522be406ef079aa32d921c67799..d7367f6819fa0feb535293da301da862
  
      /**
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index cd46036960aac542a3ced9a8cdfcb1d35913cb76..71bda0f3be3c0b8b7fbb95e564101330d91f90c0 100644
+index 2147c06f56b8ca5f21a432eb26cc733925103973..497afeedaee8e028466480713773a54898e92185 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
 @@ -163,6 +163,33 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent

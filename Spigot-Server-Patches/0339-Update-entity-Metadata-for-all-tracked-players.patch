@@ -22,10 +22,10 @@ index 216445778ce8432fe2506cd7ac4312f43f42ba33..e9bc1d22825850a1f1ef3267428c1984
          this.f.accept(packet);
          if (this.tracker instanceof EntityPlayer) {
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index af80dcddc4f65acc916b5b12bb7f9fb2effd3b90..755c5778e0258878daa7ede1b26877e75d97a5ce 100644
+index d40f1b8a6d14e9c76d3759ab90adf2db6d7edd22..95dd2cd76be7e41d5efd17f5023335e72dbafba1 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
-@@ -2139,7 +2139,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2142,7 +2142,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
  
                      if (event.isCancelled() || this.player.inventory.getItemInHand() == null || this.player.inventory.getItemInHand().getItem() != origItem) {
                          // Refresh the current entity metadata

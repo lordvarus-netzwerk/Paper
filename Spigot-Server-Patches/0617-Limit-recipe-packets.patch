@@ -23,7 +23,7 @@ index c14df29b190a9c0126545e0084b6283efc3ce7b0..152857012d46e05c185e2a3f62a77041
      public static boolean velocityOnlineMode;
      public static byte[] velocitySecretKey;
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index fbbb5d1019d894e0f05cffb05bcea1e2fdfcbf6e..4d3a427b16e1e0d6889faf4b913b212f8a6e938d 100644
+index fb4e88e14d60f70127088224c3c1022c73b00bc7..1b592948ced0173f8ec0f95bae3e756c519b7a56 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -1,5 +1,6 @@
@@ -42,16 +42,7 @@ index fbbb5d1019d894e0f05cffb05bcea1e2fdfcbf6e..4d3a427b16e1e0d6889faf4b913b212f
  import org.apache.commons.lang3.StringUtils;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
-@@ -29,6 +30,8 @@ import org.apache.logging.log4j.Logger;
- // CraftBukkit start
- import java.util.concurrent.ExecutionException;
- import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-+
-+import org.bukkit.Bukkit;
- import org.bukkit.Location;
- import org.bukkit.craftbukkit.entity.CraftPlayer;
- import org.bukkit.craftbukkit.event.CraftEventFactory;
-@@ -85,6 +88,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -87,6 +88,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      private volatile int chatThrottle;
      private static final AtomicIntegerFieldUpdater chatSpamField = AtomicIntegerFieldUpdater.newUpdater(PlayerConnection.class, "chatThrottle");
      private final java.util.concurrent.atomic.AtomicInteger tabSpamLimiter = new java.util.concurrent.atomic.AtomicInteger(); // Paper - configurable tab spam limits
@@ -59,7 +50,7 @@ index fbbb5d1019d894e0f05cffb05bcea1e2fdfcbf6e..4d3a427b16e1e0d6889faf4b913b212f
      // CraftBukkit end
      private int j;
      private final Int2ShortMap k = new Int2ShortOpenHashMap();
-@@ -233,6 +237,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -235,6 +237,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
          // CraftBukkit start
          for (int spam; (spam = this.chatThrottle) > 0 && !chatSpamField.compareAndSet(this, spam, spam - 1); ) ;
          if (tabSpamLimiter.get() > 0) tabSpamLimiter.getAndDecrement(); // Paper - split to seperate variable
@@ -67,12 +58,12 @@ index fbbb5d1019d894e0f05cffb05bcea1e2fdfcbf6e..4d3a427b16e1e0d6889faf4b913b212f
          /* Use thread-safe field access instead
          if (this.chatThrottle > 0) {
              --this.chatThrottle;
-@@ -2627,6 +2632,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2630,6 +2633,14 @@ public class PlayerConnection implements PacketListenerPlayIn {
  
      @Override
      public void a(PacketPlayInAutoRecipe packetplayinautorecipe) {
 +        // Paper start
-+        if (!Bukkit.isPrimaryThread()) {
++        if (!org.bukkit.Bukkit.isPrimaryThread()) {
 +            if (recipeSpamPackets.addAndGet(PaperConfig.autoRecipeIncrement) > PaperConfig.autoRecipeLimit) {
 +                minecraftServer.scheduleOnMain(() -> this.disconnect(new ChatMessage("disconnect.spam", new Object[0]))); // Paper
 +                return;

@@ -85,7 +85,7 @@ index 0000000000000000000000000000000000000000..b6f4400df3d8ec7e06a996de54f8cabb
 +    }
 +}
 diff --git a/src/main/java/net/minecraft/server/EntityHuman.java b/src/main/java/net/minecraft/server/EntityHuman.java
-index 7c0d381926e5ce59ded474c65b50016d4a7feab1..caaa01b20e5b7430b809477022f8ab35f3c5bf20 100644
+index 83f9c2c35f7f12405bf326e750112d8ab415cc7b..3ef463e1313b9729c86437f499930ab4cd332a6d 100644
 --- a/src/main/java/net/minecraft/server/EntityHuman.java
 +++ b/src/main/java/net/minecraft/server/EntityHuman.java
 @@ -36,7 +36,7 @@ public abstract class EntityHuman extends EntityLiving {
@@ -149,7 +149,7 @@ index dbc3552d50c4129e1844c8a379ab5ba396645f52..87ec3987d4b6de836016e91ef90383e3
          return this.e;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index bc9b5f54f067a6c7c716cc4e82b14308db03b84f..1f02a93cf16ffe9d8f073a4af838ed5cf941f70c 100644
+index c1241fdfbe1f638d9d9700ba7c2b68a2c906389a..7558ffd9008801047c32e2122389e798f3da08dd 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -1,5 +1,8 @@
@@ -161,7 +161,7 @@ index bc9b5f54f067a6c7c716cc4e82b14308db03b84f..1f02a93cf16ffe9d8f073a4af838ed5c
  import com.destroystokyo.paper.Title;
  import com.google.common.base.Preconditions;
  import com.google.common.collect.ImmutableSet;
-@@ -2261,6 +2264,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -2262,6 +2265,24 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      public void setViewDistance(int viewDistance) {
          throw new NotImplementedException("Per-Player View Distance APIs need further understanding to properly implement (There are per world view distances though!)"); // TODO
      }

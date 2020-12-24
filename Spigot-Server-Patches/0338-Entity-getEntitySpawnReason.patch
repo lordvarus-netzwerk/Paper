@@ -10,7 +10,7 @@ persistenting Living Entity, SPAWNER for spawners,
 or DEFAULT since data was not stored.
 
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 9384cd901f934c41dcfadde29561fadfa0e523f8..14c2929d0ed0dcbd22a7efd310c2da9d9ccbe09a 100644
+index f999920fcc61109d2359ada18fb4272e25c2fcc7..073660a67ece962981b388a8b0f5402ce2a430c6 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -72,6 +72,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
@@ -71,10 +71,10 @@ index 1aecc84479b00a019a5b68f5e726d1c2965ae0f7..c3a5db97fd85b31c6b4bce93527b9d0e
                              // Spigot Start
                              if (org.bukkit.craftbukkit.event.CraftEventFactory.callSpawnerSpawnEvent(entity, blockposition).isCancelled()) {
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index b6e8cd15fe2893ecde4c227f4fc28fcd07600f7c..625a2b2d0c71c40fa44429b00f0391aac7bce277 100644
+index 669fa41208a78ae6ac11ced3934927a0046ea22a..7881f1fd2bf2d9ba8e89099a0e104f0ee112fa71 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
-@@ -262,7 +262,7 @@ public abstract class PlayerList {
+@@ -261,7 +261,7 @@ public abstract class PlayerList {
              // CraftBukkit start
              WorldServer finalWorldServer = worldserver1;
              Entity entity = EntityTypes.a(nbttagcompound1.getCompound("Entity"), finalWorldServer, (entity1) -> {
@@ -96,10 +96,10 @@ index c8a990ab5db73b9e13b60b55f10142fe20e8179a..36929d3220e305ffed9eb52e5e000a51
          if (entity.valid) {
              MinecraftServer.LOGGER.error("Attempted Double World add on " + entity, new Throwable());
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-index 018eea17881feeb6583a5b1ae2ab0795e962095b..e2d4aa9ba7fa007b3d93a166c5fb57c8a90387ed 100644
+index 8eff62bcdc424cd8c040fd95124d11009f27a0d6..1b722b5598043378c3a94856fa00a8bdf2b64718 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftEntity.java
-@@ -1093,5 +1093,10 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
+@@ -1107,5 +1107,10 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
      public boolean fromMobSpawner() {
          return getHandle().spawnedViaMobSpawner;
      }

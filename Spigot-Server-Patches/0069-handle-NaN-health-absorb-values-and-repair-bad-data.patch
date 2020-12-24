@@ -44,10 +44,10 @@ index 3858fabf74e7604a7c62806e98c68eed4a97a485..28fc0288b625694fb2dc356cf7eff9d0
          }
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index f55b9a7d118d6433d7de609541aa45228f174e13..a7c91d3e5a4bab8eefb291a90b0752fe7c1fb6ec 100644
+index 0c610ce7f631a75821cef22a5378699806cf9780..6ebf07add8b4c6edcde73ae896bd0dc0a4b79851 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-@@ -1630,6 +1630,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -1699,6 +1699,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      }
  
      public void setRealHealth(double health) {

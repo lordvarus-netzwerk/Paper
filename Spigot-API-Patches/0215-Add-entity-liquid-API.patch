@@ -5,10 +5,10 @@ Subject: [PATCH] Add entity liquid API
 
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index 52144f9ddbe700dc4e7201642511219c47a334ed..9aa80ba2df23e83642ff2bb1afa9ee9ea9ce47dd 100644
+index f6690e93e34b1d0c5844f8f0850f72c2af9f2cec..b7372d7a4de49b8b2bd99e2a81c74f3188760e57 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -662,5 +662,35 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+@@ -668,5 +668,35 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
       */
      @NotNull
      org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason getEntitySpawnReason();

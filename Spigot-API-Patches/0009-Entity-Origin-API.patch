@@ -5,15 +5,14 @@ Subject: [PATCH] Entity Origin API
 
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index 344c14a5ed86e9ebe401bfb5ba3aedc0c0ed0b04..7c3100d44ca42fe9c9ffedad321be9f2e446491a 100644
+index cfae8ac8ddfcea44aca17ca96385017ba75c7e04..2b7d678497101829ac7d35fa0e17fd628d7cf466 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -602,4 +602,16 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
-     @Override
-     Spigot spigot();
-     // Spigot end
+@@ -609,5 +609,15 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+     default net.kyori.adventure.text.event.HoverEvent<net.kyori.adventure.text.event.HoverEvent.ShowEntity> asHoverEvent(final @NotNull java.util.function.UnaryOperator<net.kyori.adventure.text.event.HoverEvent.ShowEntity> op) {
+         return net.kyori.adventure.text.event.HoverEvent.showEntity(this.getType().getKey(), this.getUniqueId(), null);
+     }
 +
-+    // Paper start
 +    /**
 +     * Gets the location where this entity originates from.
 +     * <p>
@@ -23,7 +22,7 @@ index 344c14a5ed86e9ebe401bfb5ba3aedc0c0ed0b04..7c3100d44ca42fe9c9ffedad321be9f2
 +     */
 +    @Nullable
 +    Location getOrigin();
-+    // Paper end
+     // Paper end
  }
 diff --git a/src/main/java/org/bukkit/entity/FallingBlock.java b/src/main/java/org/bukkit/entity/FallingBlock.java
 index 64f9d3fd870d65afd2ee9a85625b149163eee144..14cb0d770561151570ab4399ca5facff43076819 100644
